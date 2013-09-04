@@ -123,7 +123,3 @@ if __name__ == '__main__':
 	fout.write('<HEAD><meta http-equiv="refresh" content="300"><BODY><center><img src="%s" border=1 /><p><img src="%s" border=1 /></center><p>%s</BODY></HEAD>'%(c1,c2,problems))
 
 	fout.close()
-
-	os.system('scp index.html djpeake@baker:/home/web/djpeake/accel_map/')
-
-	#chart.download('accel_map.png')
