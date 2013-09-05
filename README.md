@@ -10,3 +10,5 @@ Dependancies
 
 https://github.com/gak/pygooglechart
 
+Tesseract OCR for image only ring statuses
+https://code.google.com/p/tesseract-ocr/
