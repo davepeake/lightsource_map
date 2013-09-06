@@ -3,21 +3,25 @@
 Return the current at ALS 
 '''
 
-import urllib
+import requests
+from bs4 import BeautifulSoup
 
 name = "Angstroemequelle Karlsruhe"
 country = "Karlsruhe, Germany"
 acronym = 'ANKA'
 isocode = 'DE-BW'
 
-ANKA_URL = 'http://ankaweb.fzk.de/_popup/status.html'
+ANKA_URL = 'http://ankastatserv.ka.fzk.de:8080/axis/StatusMedium'
+
 
 def get_current():
-	A = urllib.urlopen(ANKA_URL).readlines()
+    r = requests.get(ANKA_URL)
 
-	I = A[29].lstrip().lstrip('<td>').rstrip().rstrip('</td>')
+    soup = BeautifulSoup(r.text)
 
-	return eval(I)
+    qq = soup.find("b", {'id': 'current'})
+
+    return float(qq.contents[0].split()[0])
 
 if __name__ == '__main__':
-	print get_current()
+    print get_current()
