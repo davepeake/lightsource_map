@@ -13,7 +13,7 @@ def remove_tags(s):
 		return s.replace(s[st:en+1],'')
 
 class CSynchData:
-	def __init__(self, url='https://vbl.synchrotron.org.au/fsm/index.wml'):
+	def __init__(self, url='http://fsm.synchrotron.org.au/fsm/index.wml'):
 		self.url = url
 
 		self.data = {}
